@@ -1,1 +1,19 @@
-<p>create-task works!</p>
+<form> <!--(ngSubmit)="createTask()"-->
+    <h1>Create a new Task</h1>
+    <span>Task Title</span>
+    <input placeholder="Enter task name" type="text" name="title"><br><br>
+    <span>Description </span>
+    <input placeholder="Enter description" type="text" name="desc"><br><br>
+    <h3>What is The Priority of the Task?</h3>
+    <select name="Priority">
+        <option value="High" [value]="3">High</option>
+        <option value="Medium" [value]="2">Medium</option>
+        <option value="Low" [value]="1">Low</option>
+    </select>
+
+
+
+    <button>
+        Create Task
+    </button>
+</form>
