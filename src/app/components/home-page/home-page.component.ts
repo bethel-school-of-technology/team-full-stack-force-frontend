@@ -8,6 +8,7 @@ import { TaskService } from '../../services/task.service';
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
+
 export class HomePageComponent implements OnInit {
 
   taskList: Task[] = [];
@@ -35,7 +36,6 @@ export class HomePageComponent implements OnInit {
       console.error('Error creating task:', error);
     });
   }
-
 
   updateTask(task: Task) {
     this.taskService.updateTask(task).subscribe(updatedTask => {
