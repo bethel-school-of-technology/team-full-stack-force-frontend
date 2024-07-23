@@ -3,12 +3,12 @@
  * Copyright Google LLC All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://angular.dev/license
  */
 import { BuilderContext, BuilderOutput } from '@angular-devkit/architect';
 import { json } from '@angular-devkit/core';
 import { Schema as ProtractorBuilderOptions } from './schema';
-export { ProtractorBuilderOptions };
+export type { ProtractorBuilderOptions };
 /**
  * @experimental Direct usage of this function is considered experimental.
  */
