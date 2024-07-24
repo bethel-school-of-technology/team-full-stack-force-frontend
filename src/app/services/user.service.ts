@@ -24,7 +24,8 @@ export class UserService {
 
     return this.http.get(`${this.baseURL}/login`,  { params: queryParams, responseType: 'text' })
       .pipe(tap((response: any) => {
-        localStorage.setItem('myCoffeeToken', response);
+        localStorage.setItem('myDevToken', response);
       }));
   }
 }
+ 
