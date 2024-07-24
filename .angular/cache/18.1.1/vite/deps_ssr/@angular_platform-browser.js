@@ -36,12 +36,21 @@ import {
   withHttpTransferCacheOptions,
   withI18nSupport,
   withNoHttpTransferCache
+<<<<<<< HEAD:.angular/cache/18.1.1/vite/deps_ssr/@angular_platform-browser.js
 } from "./chunk-NWUWTLIS.js";
 import {
   getDOM
 } from "./chunk-5LJ4GETK.js";
 import "./chunk-CVVIHLGL.js";
 import "./chunk-NQ4HTGF6.js";
+=======
+} from "./chunk-OHDGHASR.js";
+import "./chunk-XXO5LL2B.js";
+import {
+  getDOM
+} from "./chunk-DUZIHFAN.js";
+import "./chunk-XZJLRREG.js";
+>>>>>>> devjay:.angular/cache/17.3.8/vite/deps/@angular_platform-browser.js
 export {
   BrowserModule,
   By,

@@ -1,7 +1,12 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   Title
+<<<<<<< HEAD:.angular/cache/18.1.1/vite/deps_ssr/@angular_router.js
 } from "./chunk-NWUWTLIS.js";
+=======
+} from "./chunk-OHDGHASR.js";
+import "./chunk-XXO5LL2B.js";
+>>>>>>> devjay:.angular/cache/17.3.8/vite/deps/@angular_router.js
 import {
   DOCUMENT,
   HashLocationStrategy,
@@ -10,20 +15,28 @@ import {
   LocationStrategy,
   PathLocationStrategy,
   ViewportScroller
+<<<<<<< HEAD:.angular/cache/18.1.1/vite/deps_ssr/@angular_router.js
 } from "./chunk-5LJ4GETK.js";
+=======
+} from "./chunk-DUZIHFAN.js";
+>>>>>>> devjay:.angular/cache/17.3.8/vite/deps/@angular_router.js
 import {
   APP_BOOTSTRAP_LISTENER,
   APP_INITIALIZER,
   ApplicationRef,
   Attribute,
+  BehaviorSubject,
   ChangeDetectorRef,
   Compiler,
   Component,
+  ConnectableObservable,
   Console,
   ContentChildren,
   Directive,
+  EMPTY,
   ENVIRONMENT_INITIALIZER,
   ElementRef,
+  EmptyError,
   EnvironmentInjector,
   EventEmitter,
   HostBinding,
@@ -43,22 +56,54 @@ import {
   Renderer2,
   RuntimeError,
   SkipSelf,
+  Subject,
+  Subscription,
   Version,
   ViewContainerRef,
+  __async,
+  __spreadProps,
+  __spreadValues,
   afterNextRender,
   booleanAttribute,
+  catchError,
+  combineLatest,
+  concat,
+  concatMap,
   createEnvironmentInjector,
+  defaultIfEmpty,
+  defer,
+  filter,
+  finalize,
+  first,
+  from,
   inject,
   isInjectable,
   isNgModule,
+  isObservable,
   isPromise,
   isStandalone,
+  last,
   makeEnvironmentProviders,
+  map,
+  mapTo,
+  mergeAll,
+  mergeMap,
+  of,
+  pipe,
+  refCount,
   reflectComponentType,
   require_cjs,
   require_operators,
   runInInjectionContext,
+  scan,
   setClassMetadata,
+  startWith,
+  switchMap,
+  take,
+  takeLast,
+  takeUntil,
+  tap,
+  throwError,
   ɵɵInputTransformsFeature,
   ɵɵNgOnChangesFeature,
   ɵɵStandaloneFeature,
@@ -79,6 +124,7 @@ import {
   ɵɵloadQuery,
   ɵɵqueryRefresh,
   ɵɵsanitizeUrlOrResourceUrl
+<<<<<<< HEAD:.angular/cache/18.1.1/vite/deps_ssr/@angular_router.js
 } from "./chunk-CVVIHLGL.js";
 import {
   __async,
@@ -86,6 +132,9 @@ import {
   __spreadValues,
   __toESM
 } from "./chunk-NQ4HTGF6.js";
+=======
+} from "./chunk-XZJLRREG.js";
+>>>>>>> devjay:.angular/cache/17.3.8/vite/deps/@angular_router.js
 
 // node_modules/@angular/router/fesm2022/router.mjs
 var import_rxjs = __toESM(require_cjs(), 1);

@@ -464,8 +464,12 @@ import {
   ɵɵvalidateIframeAttribute,
   ɵɵviewQuery,
   ɵɵviewQuerySignal
+<<<<<<< HEAD:.angular/cache/18.1.1/vite/deps_ssr/@angular_core.js
 } from "./chunk-CVVIHLGL.js";
 import "./chunk-NQ4HTGF6.js";
+=======
+} from "./chunk-XZJLRREG.js";
+>>>>>>> devjay:.angular/cache/17.3.8/vite/deps/@angular_core.js
 export {
   ANIMATION_MODULE_TYPE,
   APP_BOOTSTRAP_LISTENER,
