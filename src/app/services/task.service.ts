@@ -10,7 +10,7 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl: string = "http://localhost:5025/api/task" //update to actual backend address
+  baseUrl: string = "http://localhost:3000/task" //update to actual backend address
 
   getAllTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.baseUrl)
