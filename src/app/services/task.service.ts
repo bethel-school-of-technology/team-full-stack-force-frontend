@@ -11,7 +11,7 @@ export class TaskService {
   constructor(private http: HttpClient) { }
 
   baseUrl: string = "http://localhost:3000/task" //update to actual backend address
-  tokenKey: string = "myDevToken";
+  // tokenKey: string = "myDevToken"; Do we need to add authorization to methods?
 
   getAllTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.baseUrl)
