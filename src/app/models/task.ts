@@ -1,7 +1,7 @@
 import { User } from "./user";
 
 export class Task {
-    taskId?: number; 
+    taskId?: any; 
     priority?: number;
     title?: string;
     description?: string;

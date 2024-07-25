@@ -21,6 +21,9 @@ export class TaskService {
   }
 
   createTask(newTask: Task): Observable<Task> {
+    if (typeof newTask.taskId !== 'string') {
+      newTask.taskId = newTask.taskId?.toString();
+    }
     return this.http.post<Task>(this.baseUrl, newTask);
   }
 
