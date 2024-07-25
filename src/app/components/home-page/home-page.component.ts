@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { Task } from '../../models/task';
 import { TaskService } from '../../services/task.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class HomePageComponent implements OnInit {
 
   taskList: Task[] = [];
 
-  constructor(private taskService: TaskService){}
+  constructor(private taskService: TaskService, private router: Router){}
 
   ngOnInit(): void {
     this.loadTasks();
@@ -28,27 +29,30 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  createTask(task: Task) {
-    this.taskService.createTask(task).subscribe((newTask) => {
-      this.taskList.push(newTask);
-      console.log('Task created:', newTask);
-    }, error => {
-      console.error('Error creating task:', error);
-    });
-  }
+  // createTask(task: Task) {
+  //   this.taskService.createTask(task).subscribe((newTask) => {
+  //     this.taskList.push(newTask);
+  //     console.log('Task created:', newTask);
+  //   }, error => {
+  //     console.error('Error creating task:', error);
+  //   });
+  // }
 
-  updateTask(task: Task) {
-    this.taskService.updateTask(task).subscribe(updatedTask => {
-      console.log('Task updated:', updatedTask);
-      this.loadTasks();
-    }, error => {
-      console.error('Error updating task:', error);
-    });
+  // updateTask(task: Task) {
+  //   this.taskService.updateTask(task).subscribe(updatedTask => {
+  //     console.log('Task updated:', updatedTask);
+  //     this.loadTasks();
+  //   }, error => {
+  //     console.error('Error updating task:', error);
+  //   });
+  // }
+  editTask(taskId: number){
+    this.router.navigate(['/edit', taskId])
   }
 
   deleteTask(taskId: number){
     this.taskService.deleteTask(taskId).subscribe(deleteTask => {
-      console.log('Task deleted:', taskId);
+      console.log('Task deleted succesfully');
       this.loadTasks();
     },error => {
         console.error('Error deleting task:', error);
