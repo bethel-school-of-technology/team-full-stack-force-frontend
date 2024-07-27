@@ -1,29 +1,30 @@
-<nav role="navigation">
-  <a routerLink="register" title="Sign Up">Sign Up</a>
-  <span> | </span>
-  <a routerLink="login" title="Log in">Sign In</a>
-  <span> | </span>
-</nav>
 <mat-drawer-container class="container">
   <mat-drawer #drawer class="sidenav" mode="side">
-      
-      <li class="links"><a routerLink="/home" class="link">Home</a></li>
-      <li class="links"><a routerLink="/project" class="link">Your Projects</a></li>
-      <li class="links"><a routerLink="/profile" class="link">Your Profile</a></li>
-      <li class="links"><a routerLink="/create" class="link">Create a Task</a></li>
+
+    <li class="links"><a routerLink="/home" class="link">Home</a></li>
+    <li class="links"><a routerLink="/project" class="link">Your Projects</a></li>
+    <li class="links"><a routerLink="/profile" class="link">Your Profile</a></li>
+    <li class="links"><a routerLink="/create" class="link">Create a Task</a></li>
 
   </mat-drawer>
 
 
   <mat-toolbar class="toolbar">
-      <button mat-icon-button class="menuButton" aria-label="menu" (click)="drawer.toggle()">
-          <mat-icon>menu</mat-icon>
-      </button>
-      <span>Full Stack Force</span>
-      <span class="spacer"></span>
-      <button mat-icon-button class="homeButton" aria-label="home">
-          <mat-icon fontIcon="home" routerLink="/home"></mat-icon>
-      </button>
+    <button mat-icon-button class="menuButton" aria-label="menu" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="span">Full Stack Force</span>    
+    <span class="spacer"></span>
+
+
+    <a routerLink="register" title="Sign Up"> Sign Up </a>
+    <span class="span"> </span>
+    <a routerLink="login" title="Log in"> Sign In </a>
+    <span class="span"> </span>    
+    <button mat-icon-button class="homeButton" aria-label="home">
+      <mat-icon fontIcon="home" routerLink="/home"></mat-icon>
+    </button>
+
   </mat-toolbar>
 
 
@@ -32,4 +33,3 @@
 
   <router-outlet></router-outlet>
 </mat-drawer-container>
-

@@ -1,5 +1,5 @@
 <form (ngSubmit)="editTask()">
-    <h1>Create a new Task</h1>
+    <h1>Edit Task</h1>
     <span>Task Title</span>
     <input placeholder="Enter task name" type="text" name="title" [(ngModel)]="currentTask.title"><br><br>
     <span>Description </span>
@@ -20,5 +20,5 @@
         <label for="duedate">Due Date:</label>
         <input type="datetime-local" id="duedate" name="duedate" [(ngModel)]="currentTask.dueDate">
 
-    <button type="submit">Create Task</button>
+    <button type="submit">Update Task</button>
 </form>

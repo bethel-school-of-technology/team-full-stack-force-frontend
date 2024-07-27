@@ -18,7 +18,7 @@ export class EditTaskComponent implements OnInit {
 
 
   ngOnInit(): void {
-    const currentId = this.actRoute.snapshot.paramMap.get("id") ?? "";
+    const currentId = this.actRoute.snapshot.paramMap.get("taskId") ?? "1";
     this.id = parseInt(currentId);
     console.log(currentId)
     this.taskService.getTaskById(this.id).subscribe(foundTask => {

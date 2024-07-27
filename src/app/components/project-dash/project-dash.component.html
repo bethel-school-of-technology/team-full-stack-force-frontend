@@ -1,1 +1,22 @@
-<p>project-dash works!</p>
+<h1>Project Manager</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let task of taskList">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ task.title }}</h5>
+          <div class="card-text">
+            <strong>User:</strong> {{ task.assigned }}<br>
+            <strong>Priority:</strong> {{ task.priority }}<br>
+            <strong>Assigned:</strong> {{ task.assigned }}<br>
+            <strong>Due Date:</strong> {{ task.dueDate | date: 'longDate' }}
+            <div class="buttons">
+              <button (click)="editTask(task.taskId)">Edit</button>
+              <button (click)="deleteTask(task.taskId)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
