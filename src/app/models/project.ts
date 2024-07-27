@@ -6,4 +6,6 @@ export class Project {
     name: string = '';
     members: User[] = [];
     tasks: Task[] = [];
+    dueDate?: Date;
+    createdDate?: Date;
 }
