@@ -17,14 +17,14 @@ export class TaskService {
     return this.http.get<Task[]>(this.baseUrl)
   }
 
-  getTaskById(taskId: number): Observable<Task> {
+  getTaskById(taskId: string): Observable<Task> {
     return this.http.get<Task>(`${this.baseUrl}/${taskId}`);
   }
 
   createTask(newTask: Task): Observable<Task> {
-    if (typeof newTask.taskId !== 'string') {
-      newTask.taskId = newTask.taskId?.toString();
-    }
+    // if (typeof newTask.taskId !== 'string') {
+    //   newTask.taskId = newTask.taskId?.toString();
+    // }
     return this.http.post<Task>(this.baseUrl, newTask);
   }
 

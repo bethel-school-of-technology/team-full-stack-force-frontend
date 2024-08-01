@@ -28,11 +28,11 @@ export class ProjectDashComponent implements OnInit{
     });
   }
 
-  editTask(taskId: number){
+  editTask(taskId: any){
     this.router.navigate(['/edit', taskId])
   }
 
-  deleteTask(taskId: number){
+  deleteTask(taskId: any){
     this.taskService.deleteTask(taskId).subscribe(deleteTask => {
       console.log('Task deleted succesfully');
       this.loadTasks();
