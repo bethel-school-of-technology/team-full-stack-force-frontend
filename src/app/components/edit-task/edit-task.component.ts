@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditTaskComponent implements OnInit {
 
-  id: number = 0;
+  id: any = 0;
 
   currentTask: Task = new Task();
 

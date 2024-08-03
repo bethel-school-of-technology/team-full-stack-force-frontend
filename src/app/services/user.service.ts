@@ -18,11 +18,7 @@ export class UserService {
   }
 
   login(email: string, password: string) {
-    let queryParams = new HttpParams();
-    queryParams = queryParams.append('email', email);
-    queryParams = queryParams.append('password', password);
-
-    return this.http.get(`${this.baseURL}/login`,  { params: queryParams, responseType: 'text' })
+    return this.http.post(`${this.baseURL}/login`,  { email, password})
       .pipe(tap((response: any) => {
         localStorage.setItem('myDevToken', response);
       }));
