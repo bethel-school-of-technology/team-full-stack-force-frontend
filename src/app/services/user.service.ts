@@ -8,17 +8,17 @@ import { tap } from 'rxjs';
 })
 export class UserService {
 
-  baseURL: string = "https://localhost:3306/api" //this needs to be standardized at some point
+  baseURL: string = "http://localhost:3000/api" //this needs to be standardized at some point
 
   constructor(private http: HttpClient) { }
 
   signUp(newUser: User){
-    return this.http.post(`${this.baseURL}/register`, newUser);
+    return this.http.post(`${this.baseURL}/auth/register`, newUser);
 
   }
 
   login(email: string, password: string) {
-    return this.http.post(`${this.baseURL}/login`,  { email, password})
+    return this.http.post(`${this.baseURL}/auth/login`,  { email, password})
       .pipe(tap((response: any) => {
         localStorage.setItem('myDevToken', response);
       }));
