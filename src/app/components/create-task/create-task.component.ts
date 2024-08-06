@@ -15,10 +15,20 @@ export class CreateTaskComponent implements OnInit{
   constructor (private taskService: TaskService, private router: Router) {}
 
   ngOnInit(): void {
-    this.taskService.getAllTasks().subscribe(tasks => {
-      const highestId = Math.max(...tasks.map(task => task.taskId));
-      this.newTask.taskId = highestId + 1;
-    })
+    this.taskService.getAllTasks().subscribe(
+      tasks => {
+        if (Array.isArray(tasks)) {
+          const highestId = Math.max(...tasks.map(task => task.taskId));
+          this.newTask.taskId = highestId + 1;
+        } else {
+          console.error('Expected tasks to be an array, got:', tasks);
+          this.newTask.taskId = 1; 
+        }
+      },
+      error => {
+        console.error('Error fetching tasks:', error);
+      }
+    );
   }
 
   createTask() {
