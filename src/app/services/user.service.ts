@@ -8,7 +8,7 @@ import { tap } from 'rxjs';
 })
 export class UserService {
 
-  baseURL: string = "https://localhost:3306/api" //this needs to be standardized at some point
+  baseURL: string = "https://localhost:3000/api/auth" //this needs to be standardized at some point
 
   constructor(private http: HttpClient) { }
 

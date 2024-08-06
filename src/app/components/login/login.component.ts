@@ -9,19 +9,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent  {
 
-  // email: string = '';
-  // password: string = '';
+  email: string = '';
+  password: string = '';
  
-  // constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
  
  
-  // signin(){
-  //   this.userService.login(this.email, this.password).subscribe((response:any) => {
-  //       this.router.navigateByUrl('/project');
-  //   }, error => {
-  //       console.log('Error: ', error);
-  //       window.alert('Unsuccessful Login');
-  //       this.router.navigateByUrl('/login');
-  //   });
-  // }
+  signin(){
+    this.userService.login(this.email, this.password).subscribe((response:any) => {
+        this.router.navigateByUrl('/project');
+    }, error => {
+        console.log('Error: ', error);
+        window.alert('Unsuccessful Login');
+        this.router.navigateByUrl('/login');
+    });
+  }
  }
