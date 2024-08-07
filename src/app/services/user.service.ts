@@ -20,7 +20,7 @@ export class UserService {
   login(email: string, password: string) {
     return this.http.post(`${this.baseURL}/login`,  { email, password})
       .pipe(tap((response: any) => {
-        localStorage.setItem('myDevToken', response);
+        localStorage.setItem('myDevToken', response.token);
       }));
   }
 }
