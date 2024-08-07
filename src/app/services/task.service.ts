@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Task } from '../models/task';
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ export class TaskService {
   constructor(private http: HttpClient) { }
 
   baseUrl: string = "http://localhost:3000/api/tasks/" //update to actual backend address
-  // tokenKey: string = "myDevToken"; Do we need to add authorization to methods?
+  tokenKey: string = "myDevToken"; 
 
 
   
@@ -29,7 +29,11 @@ export class TaskService {
     // if (typeof newTask.taskId !== 'string') {
     //   newTask.taskId = newTask.taskId?.toString();
     // }
-    return this.http.post<Task>(this.baseUrl, newTask);
+    let reqHeaders = 
+    {
+      Authorization: `Bearer ${localStorage.getItem(this.tokenKey)}`
+    }
+    return this.http.post<Task>(this.baseUrl, newTask, { headers: reqHeaders });
   }
 
   updateTaskById(id: number, edittedTask: Task): Observable<Task>  {
