@@ -26,12 +26,9 @@ export class TaskService {
   }
 
   createTask(newTask: Task): Observable<Task> {
-    // if (typeof newTask.taskId !== 'string') {
-    //   newTask.taskId = newTask.taskId?.toString();
-    // }
     let reqHeaders = 
     {
-      Authorization: `Bearer ${localStorage.getItem(this.tokenKey)}`
+      Authorization: `${localStorage.getItem(this.tokenKey)}`
     }
     return this.http.post<Task>(this.baseUrl, newTask, { headers: reqHeaders });
   }
