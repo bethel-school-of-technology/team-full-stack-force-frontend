@@ -1,10 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TaskService } from '../../services/task.service';
+import { Router } from '@angular/router';
+import { Task } from '../../models/task';
 
 @Component({
   selector: 'app-project-dash',
   templateUrl: './project-dash.component.html',
   styleUrl: './project-dash.component.css'
 })
-export class ProjectDashComponent {
+export class ProjectDashComponent implements OnInit{
+
+  taskList: Task[] = [];
+
+  constructor(private taskService: TaskService, private router: Router){}
+
+
+
+  ngOnInit(): void {
+    this.loadTasks();
+  }
+
+  loadTasks() {
+    this.taskService.getAllTasks().subscribe((task) => {
+      this.taskList = task;
+    }, error => {
+      console.error('Error fetching tasks:', error);
+    });
+  }
+
+  editTask(taskId: any){
+    this.router.navigate(['/edit', taskId])
+  }
+
+  deleteTask(taskId: any){
+    this.taskService.deleteTask(taskId).subscribe(deleteTask => {
+      console.log('Task deleted succesfully');
+      this.loadTasks();
+    },error => {
+        console.error('Error deleting task:', error);
+    });
+  }
 
 }

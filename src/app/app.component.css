@@ -1,0 +1,33 @@
+.menuButton {
+    margin-right: 15px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.container {
+    background-color: #d5bdaf;
+
+}
+.toolbar {
+    background-color: #e3d5ca;
+}
+.sidenav {
+    background-color: #f5ebe0;
+    width: 155px;
+}
+.links {
+    margin: 3px 2px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #5e503f;
+}
+.link {
+    color: #ccc;
+    margin-top: 3px;
+}
+.span {
+   margin-left: 25px;
+   margin-right: 25px; 
+}
