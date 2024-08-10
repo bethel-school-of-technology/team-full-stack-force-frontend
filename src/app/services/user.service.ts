@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,12 @@ export class UserService {
   login(email: string, password: string) {
     return this.http.post(`${this.baseURL}/login`,  { email, password})
       .pipe(tap((response: any) => {
+        console.log(response);
         localStorage.setItem('myDevToken', response.token);
       }));
+  }
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.baseURL}/users`)
   }
 }
  

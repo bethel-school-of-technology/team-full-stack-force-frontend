@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Task } from '../../models/task';
 import { TaskService } from '../../services/task.service';
 import { Router } from '@angular/router';
+import { User } from '../../models/user';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-create-task',
@@ -11,8 +13,9 @@ import { Router } from '@angular/router';
 export class CreateTaskComponent implements OnInit{
 
   newTask: Task = new Task();
+  userList: User[] = [];
   
-  constructor (private taskService: TaskService, private router: Router) {}
+  constructor (private userService: UserService, private taskService: TaskService, private router: Router) {}
 
   ngOnInit(): void {
     this.taskService.getAllTasks().subscribe(
@@ -29,6 +32,10 @@ export class CreateTaskComponent implements OnInit{
         console.error('Error fetching tasks:', error);
       }
     );
+    this.userService.getAllUsers().subscribe(users => {
+      this.userList = users;
+      console.log(users);
+    })
   }
 
   createTask() {

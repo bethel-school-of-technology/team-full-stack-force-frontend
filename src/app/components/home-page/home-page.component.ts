@@ -24,6 +24,7 @@ export class HomePageComponent implements OnInit {
   loadTasks() {
     this.taskService.getAllTasks().subscribe((task) => {
       this.taskList = task;
+      console.log(task);
     }, error => {
       console.error('Error fetching tasks:', error);
     });

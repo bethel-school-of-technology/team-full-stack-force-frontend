@@ -9,16 +9,18 @@
         <option value="High">High</option>
         <option value="Medium">Medium</option>
         <option value="Low">Low</option>
-    
-    <!-- <select name="Assignment"[(ngModel)]="newTask.assigned">
-        there should be a way to list all of the current users in the project 
-        a loop and display them as options in this drop down
-        that would go here
-    </select> -->
-
     </select>
-        <label for="duedate">Due Date:</label>
-        <input type="datetime-local" id="duedate" name="duedate" [(ngModel)]="newTask.dueDate">
+    <div>
+        <p>Select a User to Assign The Task To</p>
+        <select name="Assignment" [(ngModel)]="newTask.assigned">
+
+            <option *ngFor="let user of userList">{{user.firstName}} {{user.lastName}}</option>
+
+        </select>
+    </div>
+
+    <label for="duedate">Due Date:</label>
+    <input type="datetime-local" id="duedate" name="duedate" [(ngModel)]="newTask.dueDate">
 
     <button type="submit">Create Task</button>
 </form>
