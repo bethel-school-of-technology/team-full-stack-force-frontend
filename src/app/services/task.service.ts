@@ -12,7 +12,7 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl: string = "http://localhost:3000/api/tasks/" //update to actual backend address
+  baseUrl: string = "http://localhost:3000/api/tasks" //update to actual backend address
   tokenKey: string = "myDevToken"; 
 
 
@@ -23,6 +23,10 @@ export class TaskService {
 
   getTaskById(taskId: any): Observable<Task> {
     return this.http.get<Task>(`${this.baseUrl}/${taskId}`);
+  }
+
+  getTasksForUser(userId: number): Observable<Task[]> {
+    return this.http.get<Task[]>(`${this.baseUrl}?assignedTo=${userId}`);
   }
 
   createTask(newTask: Task): Observable<Task> {

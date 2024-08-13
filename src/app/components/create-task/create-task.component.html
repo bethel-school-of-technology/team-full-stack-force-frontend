@@ -14,7 +14,7 @@
         <p>Select a User to Assign The Task To</p>
         <select name="Assignment" [(ngModel)]="newTask.assigned">
 
-            <option *ngFor="let user of userList">{{user.firstName}} {{user.lastName}}</option>
+            <option *ngFor="let user of userList" [value]="user.userId">{{user.firstName}} {{user.lastName}}</option>
 
         </select>
     </div>
