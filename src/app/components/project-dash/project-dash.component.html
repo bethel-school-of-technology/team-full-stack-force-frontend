@@ -6,9 +6,9 @@
         <div class="card-body">
           <h5 class="card-title">{{ task.title }}</h5>
           <div class="card-text">
-            <strong>User:</strong> {{ task.assigned }}<br>
+            <strong>Created by:</strong> {{ task.owner?.firstName }} {{ task.owner?.lastName }}<br>
             <strong>Priority:</strong> {{ task.priority }}<br>
-            <strong>Assigned:</strong> {{ task.assigned }}<br>
+            <strong>Assigned:</strong> {{ task.assignee?.firstName }} {{ task.assignee?.lastName }}<br>
             <strong>Due Date:</strong> {{ task.dueDate | date: 'longDate' }}
             <div class="buttons">
               <button (click)="editTask(task.taskId)">Edit</button>

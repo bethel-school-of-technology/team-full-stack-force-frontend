@@ -40,8 +40,6 @@ export class CreateTaskComponent implements OnInit{
 
   createTask() {
     this.newTask.createdDate = new Date();
-    // this.newTask.whoCreated = current signed in user logic goes here 
-    // this.newTask.assignedTo = assigning logic goes here
     this.newTask.completed = false;
     this.taskService.createTask(this.newTask).subscribe(response => {
       console.log(response);

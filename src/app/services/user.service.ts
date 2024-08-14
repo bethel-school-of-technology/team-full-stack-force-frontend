@@ -25,6 +25,7 @@ export class UserService {
         console.log(response);
         localStorage.setItem('myDevToken', response.token);
         this.setLoggedInUser(response.userId)
+        console.log(response.userId)
       }));
   }
   getAllUsers(): Observable<User[]> {

@@ -5,23 +5,25 @@ export class Task {
     priority?: string;
     title?: string;
     description?: string;
-    assigned?: User;
+    assignedTo?: number;
     dueDate?: Date;
     createdDate?: Date;
-    whoCreated?: User;
+    userId?: number;
     completed?: boolean;
+    owner?: User;
+    assignee?: User;
 
 
-    constructor(taskId?: any, priority?: string, title?: string, description?: string, assigned?: User, dueDate?: Date, createdDate?: Date, whoCreated?: User, completed?: boolean){
+    constructor(taskId?: any, priority?: string, title?: string, description?: string, assignedTo?: number, dueDate?: Date, createdDate?: Date, userId?: number, completed?: boolean){
 
         this.taskId = taskId;
         this.priority = priority;
         this.title = title;
         this.description = description;
-        this.assigned = assigned;
+        this.assignedTo = assignedTo;
         this.dueDate = dueDate;
         this.createdDate = createdDate;
-        this.whoCreated = whoCreated;
+        this.userId = userId;
         this.completed = completed;
 
     }

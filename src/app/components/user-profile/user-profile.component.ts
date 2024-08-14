@@ -17,10 +17,10 @@ export class UserProfileComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.userService.getLoggedInUserId();
+    this.userId = this.userService.getLoggedInUserId();
 
-    this.taskService.getTasksForUser(this.userId).subscribe((tasks: Task[]) => {
-      this.taskList = tasks
+    this.taskService.getTasksForUser(this.userId).subscribe((response: {tasks:Task[]}) => {
+      this.taskList = response.tasks
     })
   }
 
