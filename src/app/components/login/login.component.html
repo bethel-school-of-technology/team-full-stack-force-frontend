@@ -1,14 +1,16 @@
-<form (ngSubmit)="signin()">
-    <h1>LOGIN</h1>
-    <span>Email  </span>
-    <input placeholder="Enter email" type="text" name="email" [(ngModel)]="email">
-    <br><br>
-    <span>Password  </span>
-    <input placeholder="Enter password" type="password" name="password" [(ngModel)]="password">
-    <br><br>
-    
-    <button>
-      Sign In
-    </button>
+<form (ngSubmit)="signin()" class="login-form">
+  <h1 class="form-title">LOGIN</h1>
+  
+  <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" class="form-control" placeholder="Enter email" type="text" name="email" [(ngModel)]="email">
+  </div>
+  
+  <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" class="form-control" placeholder="Enter password" type="password" name="password" [(ngModel)]="password">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Sign In</button>
 </form>
-<p>Login page under construction</p>
+

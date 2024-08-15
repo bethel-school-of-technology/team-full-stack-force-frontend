@@ -1,4 +1,4 @@
-<h1>Project Manager</h1>
+<h1 class="h1">Projects</h1>
 <div class="container">
   <div class="row">
     <div class="col-md-4" *ngFor="let task of taskList">
@@ -11,8 +11,8 @@
             <strong>Assigned:</strong> {{ task.assignee?.firstName }} {{ task.assignee?.lastName }}<br>
             <strong>Due Date:</strong> {{ task.dueDate | date: 'longDate' }}
             <div class="buttons">
-              <button (click)="editTask(task.taskId)">Edit</button>
-              <button (click)="deleteTask(task.taskId)">Delete</button>
+              <button class="modern-button edit-button" (click)="editTask(task.taskId)">Edit</button>
+              <button class="modern-button delete-button" (click)="deleteTask(task.taskId)">Delete</button>
             </div>
           </div>
         </div>

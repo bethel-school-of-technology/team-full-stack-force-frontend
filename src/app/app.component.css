@@ -19,12 +19,12 @@
 }
 .links {
     margin: 3px 2px;
-    border: 2px solid #ccc;
+    border: 2px solid gray;
     border-radius: 8px;
-    background-color: #5e503f;
+    background-color: #0056b3;
 }
 .link {
-    color: #ccc;
+    color: white;
     margin-top: 3px;
 }
 .span {
@@ -54,3 +54,7 @@
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+
+  .toolbar{
+    padding: 30px;
+}

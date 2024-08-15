@@ -1,13 +1,15 @@
-<div>
-    <h2>My Profile</h2>  
+<div class="profile-container">
+  <h2 class="profile-title">My Profile</h2>  
 
-    <h3>My Tasks</h3>
-    <ul>
-      <li *ngFor="let task of taskList">
-        <p>Title: {{ task.title }}</p>
-        <p>Description: {{ task.description }}</p>
-        <p>Priority: {{ task.priority}}</p>
-      </li>
-    </ul>
-  </div>
-  <p>Profile page does not work</p>
+  <h3 class="section-title">My Tasks</h3>
+  <ul class="task-list">
+    <li *ngFor="let task of taskList" class="task-item">
+      <div class="task-card">
+        <p><strong>Title:</strong> {{ task.title }}</p>
+        <p><strong>Description:</strong> {{ task.description }}</p>
+        <p><strong>Priority:</strong> {{ task.priority }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
