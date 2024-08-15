@@ -42,6 +42,10 @@ export class TaskService {
   }
 
   deleteTask(taskId: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/${taskId}`);
+    let reqHeaders = 
+    {
+      Authorization: `${localStorage.getItem(this.tokenKey)}`
+    }
+    return this.http.delete<void>(`${this.baseUrl}/${taskId}`, { headers: reqHeaders });
   }
 }

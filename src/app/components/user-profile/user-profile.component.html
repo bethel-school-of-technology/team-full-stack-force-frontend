@@ -3,13 +3,31 @@
 
   <h3 class="section-title">My Tasks</h3>
   <ul class="task-list">
-    <li *ngFor="let task of taskList" class="task-item">
-      <div class="task-card">
-        <p><strong>Title:</strong> {{ task.title }}</p>
-        <p><strong>Description:</strong> {{ task.description }}</p>
-        <p><strong>Priority:</strong> {{ task.priority }}</p>
-      </div>
-    </li>
+    <mat-tab-group>
+      <mat-tab label="Tasks To Do">
+        <li *ngFor="let task of taskList" class="task-item">
+          <div class="task-card">
+            <p><strong>Title:</strong> {{ task.title }}</p>
+            <p><strong>Description:</strong> {{ task.description }}</p>
+            <p><strong>Priority:</strong> {{ task.priority }}</p>
+            <div class="buttons">
+              <button class="modern-button edit-button" (click)="editTask(task.taskId)">Edit</button>
+              <button class="modern-button toggle-complete-button" (click)="toggleComplete(task.taskId)">Mark Task Complete</button>
+              <button class="modern-button delete-button" (click)="deleteTask(task.taskId)">Delete</button>
+            </div>
+          </div>
+        </li>
+      </mat-tab>
+      <mat-tab label="Completed Tasks">
+        <li *ngFor="let task of completedTasks" class="task-item">
+          <div class="task-card">
+            <p><strong>Title:</strong> {{ task.title }}</p>
+            <p><strong>Description:</strong> {{ task.description }}</p>
+            <p><strong>Priority:</strong> {{ task.priority }}</p>
+          </div>
+        </li>
+      </mat-tab>
+    </mat-tab-group>
   </ul>
 </div>
 
