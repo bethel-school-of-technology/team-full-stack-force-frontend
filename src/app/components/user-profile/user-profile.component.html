@@ -2,10 +2,10 @@
   <h2 class="profile-title">My Profile</h2>  
 
   <h3 class="section-title">My Tasks</h3>
-  <ul class="task-list">
-    <mat-tab-group>
-      <mat-tab label="Tasks To Do">
-        <li *ngFor="let task of taskList" class="task-item">
+  <mat-tab-group>
+    <mat-tab label="Tasks To Do">
+      <ul class="task-list">
+        <li *ngFor="let task of incompleteTasks" class="task-item">
           <div class="task-card">
             <p><strong>Title:</strong> {{ task.title }}</p>
             <p><strong>Description:</strong> {{ task.description }}</p>
@@ -17,17 +17,22 @@
             </div>
           </div>
         </li>
-      </mat-tab>
-      <mat-tab label="Completed Tasks">
+      </ul>
+    </mat-tab>
+    <mat-tab label="Completed Tasks">
+      <ul class="task-list">
         <li *ngFor="let task of completedTasks" class="task-item">
           <div class="task-card">
             <p><strong>Title:</strong> {{ task.title }}</p>
             <p><strong>Description:</strong> {{ task.description }}</p>
             <p><strong>Priority:</strong> {{ task.priority }}</p>
+            <div class="buttons">
+              <button class="modern-button delete-button" (click)="deleteTask(task.taskId)">Delete</button>
+            </div>
           </div>
         </li>
-      </mat-tab>
-    </mat-tab-group>
-  </ul>
+      </ul>
+    </mat-tab>
+  </mat-tab-group>
 </div>
 
