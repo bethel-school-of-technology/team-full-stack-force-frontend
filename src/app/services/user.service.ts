@@ -1,12 +1,13 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  private loggedInUserId: number = 0;
 
   baseURL: string = "http://localhost:3000/api/auth" //this needs to be standardized at some point
 
@@ -16,12 +17,25 @@ export class UserService {
     return this.http.post(`${this.baseURL}/register`, newUser);
 
   }
+  
 
   login(email: string, password: string) {
     return this.http.post(`${this.baseURL}/login`,  { email, password})
       .pipe(tap((response: any) => {
+        console.log(response);
         localStorage.setItem('myDevToken', response.token);
+        this.setLoggedInUser(response.userId)
+        console.log(response.userId)
       }));
+  }
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.baseURL}/users`)
+  }
+  setLoggedInUser(userId: number) {
+    this.loggedInUserId = userId;
+  }
+  getLoggedInUserId() {
+    return this.loggedInUserId;
   }
 }
  

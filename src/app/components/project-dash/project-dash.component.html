@@ -1,4 +1,4 @@
-<h1>Project Manager</h1>
+<h1 class="h1">Projects</h1>
 <div class="container">
   <div class="row">
     <div class="col-md-4" *ngFor="let task of taskList">
@@ -6,14 +6,12 @@
         <div class="card-body">
           <h5 class="card-title">{{ task.title }}</h5>
           <div class="card-text">
-            <strong>User:</strong> {{ task.assigned }}<br>
+            <strong>Created by:</strong> {{ task.owner?.firstName }} {{ task.owner?.lastName }}<br>
+            <strong>Task Description:</strong> {{task.description}} <br>
             <strong>Priority:</strong> {{ task.priority }}<br>
-            <strong>Assigned:</strong> {{ task.assigned }}<br>
-            <strong>Due Date:</strong> {{ task.dueDate | date: 'longDate' }}
-            <div class="buttons">
-              <button (click)="editTask(task.taskId)">Edit</button>
-              <button (click)="deleteTask(task.taskId)">Delete</button>
-            </div>
+            <strong>Assigned To:</strong> {{ task.assignee?.firstName }} {{ task.assignee?.lastName }}<br>
+            <strong>Due Date:</strong> {{ task.dueDate | date: 'longDate' }} <br>
+            <strong>Completed:</strong> {{task.completed}}
           </div>
         </div>
       </div>

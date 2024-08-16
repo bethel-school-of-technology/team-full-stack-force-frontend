@@ -25,6 +25,7 @@ export class EditTaskComponent implements OnInit {
       console.log(foundTask)
       this.currentTask = foundTask;
     })
+    
 
   }
 
