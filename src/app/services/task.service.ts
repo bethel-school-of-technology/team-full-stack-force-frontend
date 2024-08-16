@@ -38,7 +38,11 @@ export class TaskService {
   }
 
   updateTaskById(id: number, edittedTask: Task): Observable<Task>  {
-    return this.http.put<Task>(this.baseUrl + id, edittedTask);
+    let reqHeaders = 
+    {
+      Authorization: `${localStorage.getItem(this.tokenKey)}`
+    }
+    return this.http.put<Task>(`${this.baseUrl}/${id}`, edittedTask, { headers: reqHeaders });
   }
 
   deleteTask(taskId: number): Observable<void> {

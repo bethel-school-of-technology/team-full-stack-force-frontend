@@ -39,7 +39,7 @@ const routes: Routes = [
     component: CreateTaskComponent
   },
   {
-    path: "edit/:id",
+    path: "edit/:taskId",
     component: EditTaskComponent
   }
 ];
