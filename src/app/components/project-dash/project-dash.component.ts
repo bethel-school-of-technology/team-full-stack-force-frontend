@@ -23,11 +23,12 @@ export class ProjectDashComponent implements OnInit{
 
   loadTasks() {
     this.taskService.getAllTasks().subscribe((task) => {
-      this.taskList = task;
+      this.taskList = task.filter(t => !t.completed);
     }, error => {
       console.error('Error fetching tasks:', error);
     });
   }
+  
 
   editTask(taskId: any){
     this.router.navigate(['/edit', taskId])
