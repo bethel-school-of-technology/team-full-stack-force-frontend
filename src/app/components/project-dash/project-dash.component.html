@@ -13,6 +13,10 @@
             <strong>Due Date:</strong> {{ task.dueDate | date: 'longDate' }} <br>
             <strong>Completed:</strong> {{task.completed}}
           </div>
+          <div class="buttons">
+            <button class="modern-button edit-button" (click)="editTask(task.taskId)">Edit</button>
+            <button class="modern-button delete-button" (click)="deleteTask(task.taskId)">Delete</button>
+          </div>
         </div>
       </div>
     </div>

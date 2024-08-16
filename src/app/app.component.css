@@ -19,9 +19,9 @@
 }
 .links {
     margin: 3px 2px;
-    border: 2px solid gray;
+    border: 2px solid lightgray;
     border-radius: 8px;
-    background-color: #0056b3;
+    background-color: #007BFF;
 }
 .link {
     color: white;
