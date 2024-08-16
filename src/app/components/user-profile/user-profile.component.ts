@@ -46,13 +46,26 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  toggleComplete(task: Task) {
-    task.completed = true;
-    this.taskService.updateTaskById(task.taskId, task).subscribe(() => {
-      console.log('Task marked as completed');
-      this.loadUserTasks();
+  toggleComplete(taskId: number) {
+    this.taskService.getTaskById(taskId).subscribe(task => {
+      if (task) {
+        task.completed = !task.completed;
+        this.taskService.updateTaskById(taskId, task).subscribe(() => {
+          console.log('Task status updated');
+  
+          const index = this.taskList.findIndex(t => t.taskId === taskId);
+          if (index !== -1) {
+            this.taskList[index] = task; 
+          }
+
+          this.incompleteTasks = this.taskList.filter(t => !t.completed);
+          this.completedTasks = this.taskList.filter(t => t.completed);
+        }, error => {
+          console.error('Error updating task status:', error);
+        });
+      }
     }, error => {
-      console.error('Error marking task as completed:', error);
+      console.error('Error fetching task:', error);
     });
   }
 
