@@ -31,7 +31,7 @@ export class EditTaskComponent implements OnInit {
 
   editTask() {
     this.taskService.updateTaskById(this.id, this.currentTask).subscribe(edittedTask => {
-      this.router.navigateByUrl("/project")
+      this.router.navigateByUrl("/profile")
     })
   }
 }

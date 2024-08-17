@@ -3,13 +3,12 @@ import { TaskService } from '../../services/task.service';
 import { Router } from '@angular/router';
 import { Task } from '../../models/task';
 
-
 @Component({
-  selector: 'app-project-dash',
-  templateUrl: './project-dash.component.html',
-  styleUrl: './project-dash.component.css'
+  selector: 'app-task-list',
+  templateUrl: './task-list.component.html',
+  styleUrl: './task-list.component.css'
 })
-export class ProjectDashComponent implements OnInit{
+export class TaskListComponent implements OnInit{
 
   taskList: Task[] = [];
 
@@ -30,8 +29,8 @@ export class ProjectDashComponent implements OnInit{
   }
   
 
-  navigate(){
-    this.router.navigate(['/tasklist'])
+  editTask(taskId: any){
+    this.router.navigate(['/edit', taskId])
   }
 
   deleteTask(taskId: any){
@@ -44,3 +43,4 @@ export class ProjectDashComponent implements OnInit{
   }
 
 }
+

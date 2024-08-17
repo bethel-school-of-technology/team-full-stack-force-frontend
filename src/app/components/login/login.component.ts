@@ -17,7 +17,7 @@ export class LoginComponent  {
  
   signin(){
     this.userService.login(this.email, this.password).subscribe((response:any) => {
-        this.router.navigateByUrl('/project');
+        this.router.navigateByUrl('/projects');
     }, error => {
         console.log('Error: ', error);
         window.alert('Unsuccessful Login');

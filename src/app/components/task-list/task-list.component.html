@@ -1,0 +1,26 @@
+<h1 class="h1">Final Demo Project</h1>
+<h3 class="h1">All Current Tasks</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let task of taskList">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ task.title }}<br>
+            Priority: {{ task.priority }}<br>
+          </h5>
+          <div class="card-text">
+            <strong>Created by:</strong> {{ task.owner?.firstName }} {{ task.owner?.lastName }}<br>
+            <strong>Task Description:</strong> {{task.description}} <br>
+            <strong>Assigned To:</strong> {{ task.assignee?.firstName }} {{ task.assignee?.lastName }}<br>
+            <strong>Due Date:</strong> {{ task.dueDate | date: 'longDate' }} <br>
+            <strong>Completed:</strong> {{task.completed}}
+          </div>
+          <!-- <div class="buttons">
+            <button class="modern-button edit-button" (click)="editTask(task.taskId)">Edit</button>
+            <button class="modern-button delete-button" (click)="deleteTask(task.taskId)">Delete</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

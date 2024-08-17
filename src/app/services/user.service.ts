@@ -7,6 +7,7 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  private loggedIn = false;
   private loggedInUserId: number = 0;
 
   baseURL: string = "http://localhost:3000/api/auth" //this needs to be standardized at some point
@@ -17,6 +18,10 @@ export class UserService {
     return this.http.post(`${this.baseURL}/register`, newUser);
 
   }
+
+  isLoggedIn(): boolean {
+    return this.loggedIn;
+  }
   
 
   login(email: string, password: string) {
@@ -26,6 +31,7 @@ export class UserService {
         localStorage.setItem('myDevToken', response.token);
         this.setLoggedInUser(response.userId)
         console.log(response.userId)
+        this.loggedIn = true;
       }));
   }
   getAllUsers(): Observable<User[]> {

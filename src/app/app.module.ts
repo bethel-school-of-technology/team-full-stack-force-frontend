@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { TaskListComponent } from './components/task-list/task-list.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     ProjectDashComponent,
     RegisterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    TaskListComponent
   ],
   imports: [
     BrowserModule,
