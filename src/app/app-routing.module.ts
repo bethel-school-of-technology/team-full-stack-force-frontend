@@ -7,6 +7,7 @@ import { ProjectDashComponent } from './components/project-dash/project-dash.com
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { EditTaskComponent } from './components/edit-task/edit-task.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { TaskListComponent } from './components/task-list/task-list.component';
 
 const routes: Routes = [
   {
@@ -27,8 +28,12 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: "project",
+    path: "projects",
     component: ProjectDashComponent
+  },
+  {
+    path: "tasklist",
+    component: TaskListComponent
   },
   {
     path: "profile",

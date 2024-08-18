@@ -1,10 +1,12 @@
-<mat-drawer-container class="container">
+<mat-drawer-container class="container" >
   <mat-drawer #drawer class="sidenav" mode="side">
 
-    <li class="links"><a routerLink="/home" class="link">Home</a></li>
-    <li class="links"><a routerLink="/project" class="link">Your Projects</a></li>
-    <li class="links"><a routerLink="/profile" class="link">Your Profile</a></li>
-    <li class="links"><a routerLink="/create" class="link">Create a Task</a></li>
+    <li class="links" *ngIf="userService.isLoggedIn()"><a routerLink="/home" class="link">Home</a></li>
+    <li class="links" *ngIf="userService.isLoggedIn()"><a routerLink="/projects" class="link">Your Projects</a></li>
+    <li class="links" *ngIf="userService.isLoggedIn()"><a routerLink="/profile" class="link">Your Tasks</a></li>
+    <li class="links" *ngIf="userService.isLoggedIn()"><a routerLink="/create" class="link">Create a Task</a></li>
+    <li class="links" *ngIf="!userService.isLoggedIn()"><a routerLink="/login" class="link">Sign In</a></li>
+    <li class="links" *ngIf="!userService.isLoggedIn()"><a routerLink="/register" class="link">Sign Up</a></li>
 
   </mat-drawer>
 
@@ -21,9 +23,6 @@
     <span class="span"> </span>
     <a routerLink="login" title="Log in" class="hover-underline"> Sign In </a>
     <span class="span"> </span>    
-    <!-- <button mat-raised-button color="primary" aria-label="Home">
-      <mat-icon fontIcon="dashboard" routerLink="/home"></mat-icon>
-    </button> -->
 
   </mat-toolbar>
 

@@ -43,7 +43,7 @@ export class CreateTaskComponent implements OnInit{
     this.newTask.completed = false;
     this.taskService.createTask(this.newTask).subscribe(response => {
       console.log(response);
-      this.router.navigateByUrl("/project")
+      this.router.navigateByUrl("/projects")
     })
 
   }

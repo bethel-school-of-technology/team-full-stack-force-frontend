@@ -1,14 +1,15 @@
-<h1 class="h1">Projects</h1>
+<!-- <h1 class="h1">Welcome</h1>
 <div class="container">
   <div class="row">
     <div class="col-md-4" *ngFor="let task of taskList">
       <div class="card mb-4">
         <div class="card-body">
-          <h5 class="card-title">{{ task.title }}</h5>
+          <h5 class="card-title">{{ task.title }}<br>
+            Priority: {{ task.priority }}<br>
+          </h5>
           <div class="card-text">
             <strong>Created by:</strong> {{ task.owner?.firstName }} {{ task.owner?.lastName }}<br>
             <strong>Task Description:</strong> {{task.description}} <br>
-            <strong>Priority:</strong> {{ task.priority }}<br>
             <strong>Assigned To:</strong> {{ task.assignee?.firstName }} {{ task.assignee?.lastName }}<br>
             <strong>Due Date:</strong> {{ task.dueDate | date: 'longDate' }} <br>
             <strong>Completed:</strong> {{task.completed}}
@@ -17,4 +18,36 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<h1 class="h1">Welcome to the Project Dashboard</h1>
+<br>
+<h4 class="h1">Here are Your Current Projects</h4>
+<div class="card-container">
+  <div class="card" (click)="navigate()">
+    <div class="card-title">Final Demo</div>    
+    <img  class="image" src="assets\images\fullstackmanagementai1.webp" alt="Project 1" class="card-image">
+  </div>
+<div class="card">
+  <div class="card-title">Project 2</div>    
+  <img  class="image" src="assets\images\fullstackforceai.webp" alt="Project 1" class="card-image">
+</div>
+<div class="card" >
+  <div class="card-title">Project 3</div>    
+  <img  class="image" src="assets\images\fullstackforceai2.webp"  alt="Project 1" class="card-image">
+</div>
+<div class="card">
+  <div class="card-title">Project 4</div>    
+  <img  class="image" src="assets\images\projectmanagementai2.webp" alt="Project 1" class="card-image">
+</div>
+<div class="card">
+  <div class="card-title">Project 5</div>    
+  <img  class="image" src="assets\images\projectmanagement1.jpg" alt="Project 1" class="card-image">
+</div>
+<div class="card">
+  <div class="card-title">Project 6</div>    
+  <img  class="image" src="assets\images\projectmanagementai1.webp" alt="Project 1" class="card-image">
+</div>
+
+
 </div>

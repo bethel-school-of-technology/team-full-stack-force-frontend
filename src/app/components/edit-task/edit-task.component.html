@@ -1,24 +1,29 @@
-<form (ngSubmit)="editTask()">
-    <h1>Edit Task</h1>
-    <span>Task Title</span>
-    <input placeholder="Enter task name" type="text" name="title" [(ngModel)]="currentTask.title"><br><br>
-    <span>Description </span>
-    <input placeholder="Enter description" type="text" name="desc" [(ngModel)]="currentTask.description"><br><br>
-    <h3>What is The Priority of the Task?</h3>
-    <select name="Priority" [(ngModel)]="currentTask.priority">
-        <option value="High">High</option>
-        <option value="Medium">Medium</option>
-        <option value="Low">Low</option>
+<form (ngSubmit)="editTask()" class="edit-task-form">
+    <h1 class="form-title">Edit Task</h1>
     
-    <!-- <select name="Assignment"[(ngModel)]="newTask.assigned">
-        there should be a way to list all of the current users in the project 
-        a loop and display them as options in this drop down
-        that would go here
-    </select> -->
-
-    </select>
-        <label for="duedate">Due Date:</label>
-        <input type="datetime-local" id="duedate" name="duedate" [(ngModel)]="currentTask.dueDate">
-
-    <button type="submit">Update Task</button>
+    <div class="form-group">
+        <label for="title">Task Title</label>
+        <input id="title" class="form-control" placeholder="Enter task name" type="text" name="title" [(ngModel)]="currentTask.title">
+    </div>
+    
+    <div class="form-group">
+        <label for="desc">Description</label>
+        <input id="desc" class="form-control" placeholder="Enter description" type="text" name="desc" [(ngModel)]="currentTask.description">
+    </div>
+    
+    <div class="form-group">
+        <h3>What is The Priority of the Task?</h3>
+        <select class="form-control" name="Priority" [(ngModel)]="currentTask.priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="duedate">Due Date</label>
+        <input class="form-control" type="datetime-local" id="duedate" name="duedate" [(ngModel)]="currentTask.dueDate">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Update Task</button>
 </form>
